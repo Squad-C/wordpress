@@ -25,3 +25,16 @@ services:
     volumes:
       - ./.wordpress:/var/www/html
 
+  caddy:
+    container_name: caddy
+    image: caddy:latest
+    restart: always
+    ports:
+        - "443:443"
+        - "80:80"
+    volumes:
+        - ./Caddyfile:/etc/caddy/Caddyfile
+        - ./.caddy/data:/data
+    environment:
+        DOMAIN: wordpress.squadc.com
+        BACKEND_API_URL: wordpress:80

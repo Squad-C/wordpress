@@ -1,0 +1,6 @@
+https://{$DOMAIN} {
+    log
+    handle /* {
+        reverse_proxy {$BACKEND_API_URL}
+    }
+}

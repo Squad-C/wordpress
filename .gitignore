@@ -1,3 +1,5 @@
 .env
 .wordpress
 .mysql
+.caddy
+.aider*
